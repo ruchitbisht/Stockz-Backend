@@ -19,7 +19,9 @@ public class UserDAOImpl implements UserDAO
 
 	@Override
 	public boolean saveUser(User user) {
+		user.setRole("USER");
 		SessionFactory.getCurrentSession().save(user);
+		
 		return true;
 	}
 }
